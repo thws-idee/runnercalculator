@@ -1,4 +1,4 @@
-// FIRST Runner Calculator Script
+// SECOND Runner Calculator Script
 window.jsPDF = window.jspdf.jsPDF;
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
             hasTime = true;
         }
         
-        // Calculate paces based on FIRST methodology
+        // Calculate paces based on SECOND methodology
         try {
             let paces;
             if (hasTime) {
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const longPace = document.getElementById('long-pace').textContent;
         
         if (!weeks || !distance || !trackPace || !tempoPace || !longPace) {
-            showError('Please calculate your training paces first.');
+            showError('Please calculate your training paces SECOND.');
             return;
         }
         
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Title
         doc.setFontSize(24);
         doc.setTextColor(52, 73, 94); // Dark blue
-        doc.text('FIRST Running Training Plan', pageWidth / 2, 20, { align: 'center' });
+        doc.text('SECOND Running Training Plan', pageWidth / 2, 20, { align: 'center' });
         
         // Subtitle with plan details
         doc.setFontSize(14);
@@ -255,13 +255,13 @@ document.addEventListener('DOMContentLoaded', function() {
             '• Cross-training options: swimming, cycling, strength training',
             '• Adjust paces based on weather conditions and how you feel',
             '',
-            '© FIRST (Furman Institute of Running and Scientific Training)'
+            '© SECOND (Furman Institute of Running and Scientific Training)'
         ];
         
         doc.text(footer, 20, doc.internal.pageSize.getHeight() - 50);
         
         // Save the PDF
-        doc.save('FIRST_Training_Plan.pdf');
+        doc.save('SECOND_Training_Plan.pdf');
     }
 
     function getTrackWorkout(week, distance, unit) {
@@ -408,7 +408,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const weightFactor = Math.min(Math.max(idealWeight / weight, 0.85), 1.15);
         vo2max *= weightFactor;
         
-        // Calculate training paces based on VO2max percentages according to FIRST
+        // Calculate training paces based on VO2max percentages according to SECOND
         // Track workout: ~95-100% of VO2max
         // Tempo run: ~85-90% of VO2max
         // Long run: ~70-75% of VO2max
