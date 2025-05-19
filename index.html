@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIRST Runner Calculator</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .about-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: white;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 6px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .about-link:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>FIRST Runner Calculator</h1>
+            <p>Based on the Furman Institute of Running and Scientific Training methodology</p>
+            <a href="about.html" class="about-link">Learn more about FIRST</a>
+        </header>
+        
+        <main>
+            <div class="calculator-form">
+                <form id="runnerForm">
+                    <div class="form-group">
+                        <label for="gender">Gender:</label>
+                        <select id="gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="weight">Weight:</label>
+                        <div class="weight-input">
+                            <input type="number" id="weight" min="30" max="200" required placeholder="Enter your weight">
+                            <div class="unit-toggle">
+                                <input type="radio" id="kg" name="weightUnit" value="kg" checked>
+                                <label for="kg">kg</label>
+                                <input type="radio" id="lb" name="weightUnit" value="lb">
+                                <label for="lb">lb</label>
+                            </div>
+                        </div>
+                    </div>
+                      <div class="form-group">
+                        <label for="distance">Race Distance:</label>
+                        <div class="distance-input">
+                            <select id="distance" required>
+                                <option value="">Select Distance</option>
+                                <option value="5k">5K</option>
+                                <option value="10k">10K</option>
+                                <option value="half">Half Marathon</option>
+                                <option value="full">Marathon</option>
+                            </select>
+                            <div class="unit-toggle">
+                                <input type="radio" id="km" name="distanceUnit" value="km" checked>
+                                <label for="km">km</label>
+                                <input type="radio" id="mi" name="distanceUnit" value="mi">
+                                <label for="mi">mi</label>
+                            </div>
+                        </div>
+                    </div>
+                      <div class="form-group">
+                        <label for="current-time">Current Time (if available):</label>
+                        <div class="time-input">
+                            <input type="number" id="hours" min="0" max="24" placeholder="HH">
+                            <span>:</span>
+                            <input type="number" id="minutes" min="0" max="59" placeholder="MM">
+                            <span>:</span>
+                            <input type="number" id="seconds" min="0" max="59" placeholder="SS">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="training-weeks">Training Plan Duration (weeks):</label>
+                        <div class="training-weeks-input">
+                            <input type="number" id="training-weeks" min="4" max="24" value="12" required>
+                            <span class="helper-text">Recommended: 8-16 weeks</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" id="calculate">Calculate Training Paces</button>
+                        <button type="reset" id="reset">Reset</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="results" id="results-container">
+                <h2>Your FIRST Training Paces</h2>
+                <div id="results" class="hidden">
+                    <div class="result-card">
+                        <h3>Key Workout 1: Track Repeats</h3>
+                        <p class="pace" id="track-pace"></p>
+                        <p class="description">Short, fast intervals at your VO2max pace to improve speed and aerobic capacity.</p>
+                        <div class="workout-examples">
+                            <p><strong>Example workouts:</strong></p>
+                            <ul id="track-examples"></ul>
+                        </div>
+                    </div>
+                    
+                    <div class="result-card">
+                        <h3>Key Workout 2: Tempo Runs</h3>
+                        <p class="pace" id="tempo-pace"></p>
+                        <p class="description">Sustained effort at your lactate threshold pace to improve stamina and race tempo.</p>
+                        <div class="workout-examples">
+                            <p><strong>Example workouts:</strong></p>
+                            <ul id="tempo-examples"></ul>
+                        </div>
+                    </div>
+                    
+                    <div class="result-card">
+                        <h3>Key Workout 3: Long Runs</h3>
+                        <p class="pace" id="long-pace"></p>
+                        <p class="description">Slower than race pace to build endurance and prepare your body for race distance.</p>
+                        <div class="workout-examples">
+                            <p><strong>Example workouts:</strong></p>
+                            <ul id="long-examples"></ul>
+                        </div>
+                    </div>
+                      <div class="weekly-schedule">
+                        <h3>Suggested Weekly Schedule</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Day</th>
+                                    <th>Workout</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Monday</td>
+                                    <td>Rest or Cross-Training (swimming, cycling, etc.)</td>
+                                </tr>
+                                <tr>
+                                    <td>Tuesday</td>
+                                    <td>Track Repeats</td>
+                                </tr>
+                                <tr>
+                                    <td>Wednesday</td>
+                                    <td>Rest or Cross-Training</td>
+                                </tr>
+                                <tr>
+                                    <td>Thursday</td>
+                                    <td>Tempo Run</td>
+                                </tr>
+                                <tr>
+                                    <td>Friday</td>
+                                    <td>Rest or Cross-Training</td>
+                                </tr>
+                                <tr>
+                                    <td>Saturday</td>
+                                    <td>Long Run</td>
+                                </tr>
+                                <tr>
+                                    <td>Sunday</td>
+                                    <td>Complete Rest</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="training-plan">
+                        <h3>Complete Training Plan</h3>
+                        <p>Get your personalized training plan based on your paces and selected duration.</p>
+                        <button id="download-plan" class="download-button">
+                            <span class="download-icon">📋</span>
+                            Download Training Plan
+                        </button>
+                    </div>
+                </div>
+                <div id="no-results" class="message">Enter your information to see training recommendations</div>
+                <div id="error-message" class="message error hidden"></div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Note: The FIRST training methodology recommends three key quality workouts per week plus cross-training.</p>
+            <p>&copy; 2025 Runner's Calculator based on FIRST (Furman Institute of Running and Scientific Training)</p>
+        </footer>
+    </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

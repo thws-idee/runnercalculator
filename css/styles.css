@@ -1,0 +1,370 @@
+/* Global Styles */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --accent-color: #e74c3c;
+    --dark-color: #34495e;
+    --light-color: #ecf0f1;
+    --text-color: #2c3e50;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+/* Main Content Layout */
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+@media (min-width: 768px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Form Styles */
+.calculator-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Weight input with unit toggle */
+.weight-input {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.weight-input input {
+    flex: 1;
+}
+
+.unit-toggle {
+    display: flex;
+    align-items: center;
+    background-color: var(--light-color);
+    border-radius: 4px;
+    padding: 4px;
+    min-width: 120px;
+    justify-content: center;
+}
+
+.unit-toggle input[type="radio"] {
+    display: none;
+}
+
+.unit-toggle label {
+    margin: 0;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 40px;
+    text-align: center;
+}
+
+.unit-toggle input[type="radio"]:checked + label {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Distance input with unit toggle */
+.distance-input {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.distance-input select {
+    flex: 1;
+}
+
+/* Time input */
+.time-input {
+    display: flex;
+    align-items: center;
+}
+
+.time-input input {
+    width: 70px;
+    text-align: center;
+}
+
+.time-input span {
+    margin: 0 8px;
+    font-weight: bold;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"] {
+    background-color: var(--secondary-color);
+    color: white;
+    flex: 2;
+}
+
+button[type="reset"] {
+    background-color: #f8f9fa;
+    color: var(--text-color);
+    border: 1px solid #ddd;
+    flex: 1;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* Results Section */
+.results {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.results h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.result-card {
+    background-color: var(--light-color);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.result-card h3 {
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+
+.pace {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.description {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.workout-examples {
+    margin-top: 15px;
+}
+
+.workout-examples ul {
+    margin-left: 20px;
+    margin-top: 8px;
+}
+
+.workout-examples li {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+/* Weekly Schedule */
+.weekly-schedule {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--light-color);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.weekly-schedule h3 {
+    color: var(--dark-color);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.weekly-schedule table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.weekly-schedule th, 
+.weekly-schedule td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.weekly-schedule th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.weekly-schedule tr:last-child td {
+    border-bottom: none;
+}
+
+.weekly-schedule tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.message {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+}
+
+.error {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Footer */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    padding: 20px;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+/* Training Plan Styles */
+.training-weeks-input {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.training-weeks-input input {
+    width: 100px;
+    text-align: center;
+}
+
+.helper-text {
+    color: #777;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.training-plan {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--light-color);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.training-plan h3 {
+    color: var(--dark-color);
+    margin-bottom: 15px;
+}
+
+.training-plan p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.download-button {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 4px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.download-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(46, 204, 113, 0.2);
+}
+
+.download-icon {
+    font-size: 1.2em;
+}
