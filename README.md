@@ -1,10 +1,10 @@
-# FIRST Runner Calculator
+# SECOND Runner Calculator
 
-A web application for calculating personalized training paces based on the FIRST (Furman Institute of Running and Scientific Training) methodology.
+A web application for calculating personalized training paces based on the SECOND (Furman Institute of Running and Scientific Training) methodology.
 
-## About FIRST Methodology
+## About SECOND Methodology
 
-The FIRST (Furman Institute of Running and Scientific Training) running program, also known as the "Run Less, Run Faster" method, was developed by researchers at Furman University. It's designed to help runners improve performance with just three key running workouts per week, supplemented by cross-training activities.
+The SECOND (Furman Institute of Running and Scientific Training) running program, also known as the "Run Less, Run Faster" method, was developed by researchers at Furman University. It's designed to help runners improve performance with just three key running workouts per week, supplemented by cross-training activities.
 
 The three key workouts are:
 
@@ -16,7 +16,7 @@ The three key workouts are:
 
 - Input your gender, weight, and race distance
 - Optionally enter your current race time
-- Calculate recommended training paces for the three key FIRST workouts
+- Calculate recommended training paces for the three key SECOND workouts
 - Responsive design for desktop and mobile devices
 
 ## How to Use
@@ -36,12 +36,12 @@ This application uses:
 
 ## Notes
 
-- This application provides estimated training paces based on a simplified version of the FIRST methodology
+- This application provides estimated training paces based on a simplified version of the SECOND methodology
 - The calculations are approximations and may need individual adjustment
 - Always consult a healthcare professional before starting a new fitness program
 
 ## References
 
-- Furman Institute of Running and Scientific Training (FIRST)
+- Furman Institute of Running and Scientific Training (SECOND)
 - "Run Less, Run Faster" by Bill Pierce, Scott Murr, and Ray Moss
 - Daniels' Running Formula by Jack Daniels, Ph.D.
